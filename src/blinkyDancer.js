@@ -1,5 +1,5 @@
-var makeBlinkyDancer = function(top, left, timeBetweenSteps) {
-  var blinkyDancer = makeDancer(top, left, timeBetweenSteps);
+/*var makeBlinkyDancer = function(top, left, timeBetweenSteps) {
+  var blinkyDancer = MakeDancer(top, left, timeBetweenSteps);
 
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
   // so we must keep a copy of the old version of this function
@@ -16,4 +16,28 @@ var makeBlinkyDancer = function(top, left, timeBetweenSteps) {
   };
 
   return blinkyDancer;
-};
+};*/
+
+
+
+// CREATING SUBCLASS and inheriting constructor function MakeDancer
+
+var MakeBlinkyDancer = function(top, left, timeBetweenSteps){
+  MakeDancer.call(this, top, left, timeBetweenSteps);
+  
+}
+
+MakeBlinkyDancer.prototype = Object.create(MakeDancer.prototype);
+MakeBlinkyDancer.prototype.constructor = MakeBlinkyDancer;
+
+//var oldStep = MakeDancer.prototype.step //???
+
+MakeBlinkyDancer.prototype.step = function() {
+  //somehow call the oldStep function
+  MakeDancer.prototype.step.call(this)
+  console.log(this);
+
+  this.$node.toggle();
+}
+// they store old step before they create a function.
+

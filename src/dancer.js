@@ -1,4 +1,4 @@
-// Creates and returns a new dancer object that can step
+/*// Creates and returns a new dancer object that can step
 var makeDancer = function(top, left, timeBetweenSteps) {
 
   var dancer = {};
@@ -11,6 +11,7 @@ var makeDancer = function(top, left, timeBetweenSteps) {
     // it just schedules the next step
     setTimeout(dancer.step, timeBetweenSteps);
   };
+
   dancer.step();
 
   dancer.setPosition = function(top, left) {
@@ -21,7 +22,7 @@ var makeDancer = function(top, left, timeBetweenSteps) {
       top: top,
       left: left
     };
-    dancer.$node.css(styleSettings);
+    dancer.$node.css(styleSettings); xzcg cvcvv
   };
 
   // now that we have defined the dancer object, we can start setting up important parts of it by calling the methods we wrote
@@ -30,3 +31,31 @@ var makeDancer = function(top, left, timeBetweenSteps) {
 
   return dancer;
 };
+*/
+// Creating new Pseudoclassical Main Psuedoclassical Constructor
+
+var MakeDancer = function(top, left, timeBetweenSteps){
+  this.timeBetweenSteps = timeBetweenSteps;
+  this.$node = $('<span class="dancer"></span>');
+  this.step();
+  this.setPosition(top, left);
+};
+
+MakeDancer.prototype.step = function(){
+  var that = this;
+  setTimeout(function(){ 
+    that.step();
+  }, this.timeBetweenSteps);
+};
+
+MakeDancer.prototype.setPosition = function(top, left){
+  var styleSettings = {
+    top: top,
+    left: left
+  };
+  this.$node.css(styleSettings);
+}
+
+// testing
+//var newDancer = new MakeDancer(1, 5, 1000);
+//console.log(newDancer);
