@@ -57,11 +57,5 @@ MakeDancer.prototype.setPosition = function(top, left) {
 };
 
 MakeDancer.prototype.getLow = function() {
-  $('.getLow').on('click', function(){
-    console.log('Hey Parker');
-  });
+  
 };
-
-// testing
-//var newDancer = new MakeDancer(1, 5, 1000);
-//console.log(newDancer);
