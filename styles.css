@@ -1,10 +1,20 @@
+* {
+  font-family: Arial;
+  transition: all .25s;
+}
+
 body, html{
   height:100%;
 }
 body{
   margin: 0px;
-  background-color:#444;
   font-size: 18px;
+
+  width: 100vw;
+  height: 100vh;
+  background-image: url('assets/bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 /* body, a:link, a:visited, a:active{
   color: lightblue;
@@ -15,33 +25,70 @@ body{
   float:right;
   color: #fff;
 }
-.topbar{
+
+header {
+  position: relative;
+  display: block;
+  height: auto;
+  margin-top: 20px; 
+  margin-right: 30px;
+  height: 20px;
+}
+
+nav {
+  display: table;
+  width: 100%;
   height:32px;
-  background-color: #555;
+  clear: both;
 }
-.title{
-  background-color: #777;
+
+nav a:nth-child(even){
+  margin: 0 10px;
 }
+
 .dancer{
-  border:10px solid #e74C3C;
+  border:10px solid #ffd32a;
   border-radius:10px;
   position:absolute;
 }
 
 .dancefloor {
   position: relative;
+
 }
 
+a {
+  text-decoration: none;
+}
 
+/******  Blinky Dancer *******/
+
+.blinkyDancer {
+  color: #ffd32a;
+}
+
+.blinkyDancer:hover {
+  color: #ffdd59;
+  transform: scale(1.25);
+  opacity: 0.35;
+
+}
 /******  Party Animal Dancer *******/
 
+.partyAnimalBtn {
+  color: #2ed573;
+}
 
+.partyAnimalBtn:hover {
+  color: #7bed9f;
+  transform: scale(1.25) rotate(360deg);
+}
 
 .partyanimal {
   width: 0px;
   height: 0px;
   border-radius: none;
-  border-top: 20px solid greenyellow;
+  border-top: 20px solid #2ed573;
   border-left: 20px solid transparent;
   border-right: 20px solid transparent;
   position: absolute;
@@ -55,9 +102,18 @@ body{
 
 
 /******  Square Dancer *******/
+
+.squareDancerBtn {
+  color: #D980FA;
+}
+
+.squareDancerBtn:hover {
+  color: #FDA7DF;
+  transform: scale(1.25) skew(-40deg);
+}
 .squaredancer {
   border-radius: 10%;
-  border: 20px solid blueviolet;
+  border: 20px solid #D980FA;
   animation: moveInASquare 1s linear infinite;
 }
 

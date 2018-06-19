@@ -8,5 +8,5 @@ var SquareDancer = function(top, left, timeBetweenSteps) {
   SquareDancer.prototype.constructor = SquareDancer;
     
   SquareDancer.prototype.step = function() {
-    MakeDancer.prototype.step.call(this);
+  MakeDancer.prototype.step.call(this);
   };
