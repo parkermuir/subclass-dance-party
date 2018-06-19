@@ -62,10 +62,18 @@ $(document).ready(function() {
     window.dancers.forEach(function(dancer, i) {
       if (dancer[0].offsetTop < toprange[0] && dancer[0].offsetLeft > toprange[1]) {
         if (dancer[0].offsetLeft < leftrange[0] && dancer[0].offsetLeft > leftrange[1]) {
-          dancer.css('display', 'none');
+          // dancer.css('display', 'none');
+          dancer.css('top', toprange[Math.floor(Math.random() * 2)]);
+          dancer.css('left', leftrange[Math.floor(Math.random() * 2)]);
         }
       }
     });
   });
+
+  // function getRandomIntInclusive(min, max) {
+  //   min = Math.ceil(min);
+  //   max = Math.floor(max);
+  //   return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive 
+  // }
 });
 
