@@ -7,13 +7,20 @@
     <script src="src/dancer.js"></script>
     <script src="src/blinkyDancer.js"></script>
     <script src="src/partyAnimal.js"></script>
+    <script src="src/squareDancer.js"></script>
   </head>
   <body>
-    <div class="topbar">
-      <span class="title">object dance party</span>
-      <a href="#" class="addDancerButton" data-dancer-maker-function-name="MakeBlinkyDancer">add a blinky dancer</a>
-      <a href="#" class="addDancerButton partyAnimalBtn" data-dancer-maker-function-name="MakeBlinkyDancer">Party Animal</a>
-    </div>
+    <header>
+      <div class="topbar">
+        <span class="title">object dance party</span>
+        <a href="#" class="addDancerButton blinkyDancer" data-dancer-maker-function-name="MakeBlinkyDancer">add a blinky dancer</a>
+        <a href="#" class="addDancerButton partyAnimalBtn" data-dancer-maker-function-name="PartyAnimalDancer">add a Party Animal</a>
+        <a href="#" class="addDancerButton squareDancerBtn" data-dancer-maker-function-name="SquareDancer">add a Square Dancer</a>
+      </div>
+      <section class='dancefloor'>
+        <!-- Places $.nodes into this area -->
+      </section>
+    </header>
     <script src="src/init.js"></script>
   </body>
 </html>
