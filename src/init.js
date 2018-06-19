@@ -34,10 +34,38 @@ $(document).ready(function() {
 
   // Get Low function that brings dancers down
   $('.getLow').on('click', function(e){
+
     window.dancers.forEach(function(dancer, i){
       dancer.css('top', '80vh');
     })
   });
+
+  $(document).on('mouseenter', '.squaredancer', function(e) {
+    $(this).css('border-color', 'white');
+  });
+
+  $(document).on('mouseleave', '.squaredancer', function(e) {
+    $(this).css('border-color', '#D980FA');
+  });
  
+
+  // POLICE
+
+
+  $('.cops').on('click', function(){
+    $('.policeofficer').css('opacity', 1);
+    
+    var copTop = $('.policeofficer')[0].offsetTop;
+    var copLeft = $('.policeofficer')[0].offsetLeft;
+    var toprange = [copTop + 500, copTop - 500];
+    var leftrange = [copLeft + 500, copLeft - 500];
+    window.dancers.forEach(function(dancer, i) {
+      if (dancer[0].offsetTop < toprange[0] && dancer[0].offsetLeft > toprange[1]) {
+        if (dancer[0].offsetLeft < leftrange[0] && dancer[0].offsetLeft > leftrange[1]) {
+          dancer.css('display', 'none');
+        }
+      }
+    });
+  });
 });
 
