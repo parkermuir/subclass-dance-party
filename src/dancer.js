@@ -34,27 +34,27 @@ var makeDancer = function(top, left, timeBetweenSteps) {
 */
 // Creating new Pseudoclassical Main Psuedoclassical Constructor
 
-var MakeDancer = function(top, left, timeBetweenSteps){
+var MakeDancer = function(top, left, timeBetweenSteps) { 
   this.timeBetweenSteps = timeBetweenSteps;
   this.$node = $('<span class="dancer"></span>');
   this.step();
   this.setPosition(top, left);
 };
 
-MakeDancer.prototype.step = function(){
+MakeDancer.prototype.step = function() {
   var that = this;
-  setTimeout(function(){ 
+  setTimeout(function() { 
     that.step();
   }, this.timeBetweenSteps);
 };
 
-MakeDancer.prototype.setPosition = function(top, left){
+MakeDancer.prototype.setPosition = function(top, left) {
   var styleSettings = {
     top: top,
     left: left
   };
   this.$node.css(styleSettings);
-}
+};
 
 // testing
 //var newDancer = new MakeDancer(1, 5, 1000);

@@ -22,22 +22,15 @@
 
 // CREATING SUBCLASS and inheriting constructor function MakeDancer
 
-var MakeBlinkyDancer = function(top, left, timeBetweenSteps){
+var MakeBlinkyDancer = function(top, left, timeBetweenSteps) {
   MakeDancer.call(this, top, left, timeBetweenSteps);
-  
-}
+};
 
 MakeBlinkyDancer.prototype = Object.create(MakeDancer.prototype);
 MakeBlinkyDancer.prototype.constructor = MakeBlinkyDancer;
 
-//var oldStep = MakeDancer.prototype.step //???
-
 MakeBlinkyDancer.prototype.step = function() {
-  //somehow call the oldStep function
-  MakeDancer.prototype.step.call(this)
-  console.log(this);
-
+  MakeDancer.prototype.step.call(this);
   this.$node.toggle();
-}
-// they store old step before they create a function.
+};
 
